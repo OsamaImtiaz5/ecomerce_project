@@ -17,36 +17,37 @@ const SignUP = () => {
     }
   });
   const collecdata = async () => {
-    // let result = await fetch("http://localhost:8000/api/register", {
-    //   method: "POST",
-    //   body: JSON.stringify({ name, email, password }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // result = await result.json();
-    // localStorage.setItem("users", JSON.stringify(result));
-    // console.warn(result);
-    // navigate("/");
-
-    axios
-      .post(
-        "http://localhost:8000/api/user/signup",
-        { name, email, password },
-        { headers: { "Content-Type": "application/json" } }
-      )
-      .then((response) => {
-        const result = response.data;
-        // localStorage.setItem("users", JSON.stringify(result));
-        Cookies.set("user", result.token, {
-          expires: 7,
-        });
-        console.warn(result);
-        navigate("/");
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+//     // let result = await fetch("http://localhost:8000/api/register", {
+//     //   method: "POST",
+//     //   body: JSON.stringify({ name, email, password }),
+//     //   headers: {
+//     //     "Content-Type": "application/json",
+//     //   },
+//     // });
+//     // result = await result.json();
+//     // localStorage.setItem("users", JSON.stringify(result));
+//     // console.warn(result);
+//     // navigate("/");
+// 
+//     axios
+//       .post(
+//         "http://localhost:8000/api/user/signup",
+//         { name, email, password },
+//         { headers: { "Content-Type": "application/json" } }
+//       )
+//       .then((response) => {
+//         const result = response.data;
+//         // localStorage.setItem("users", JSON.stringify(result));
+//         Cookies.set("user", result.token, {
+//           expires: 7,
+//         });
+//         console.warn(result);
+//         navigate("/");
+//       })
+//       .catch((e) => {
+//         console.error(e);
+//       });
+navigate("/");
   };
   return (
     <div
