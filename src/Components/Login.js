@@ -19,34 +19,35 @@ const Login = () => {
 
   const handleLogin = async () => {
     console.log("Clicked login");
-    try {
-      const result = await fetch("http://localhost:8000/api/user/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-     const  user = await result.json();
-      //  const  token= result.token;
-        console.log("user data " , user);
-
-      console.log("result login " , result);
-      // if (result.name) {
-      // localStorage.setItem("users", JSON.stringify(result));
-      if (user.token) {
-        Cookies.set("user", user.token, {
-          expires: 7,
-        });
-        console.warn(result);
-        navigate("/");
-      } else {
-        alert("Please enter correct details or Signup");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+//     try {
+//       const result = await fetch("http://localhost:8000/api/user/login", {
+//         method: "POST",
+//         body: JSON.stringify({ email, password }),
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+// 
+//      const  user = await result.json();
+//       //  const  token= result.token;
+//         console.log("user data " , user);
+// 
+//       console.log("result login " , result);
+//       // if (result.name) {
+//       // localStorage.setItem("users", JSON.stringify(result));
+//       if (user.token) {
+//         Cookies.set("user", user.token, {
+//           expires: 7,
+//         });
+//         console.warn(result);
+//         navigate("/");
+//       } else {
+//         alert("Please enter correct details or Signup");
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+navigate("/");
   };
 
   return (
