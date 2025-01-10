@@ -21,7 +21,7 @@ const GetOtp = () => {
 
   const verifyOtp = async () => {
     axios
-      .post("http://localhost:8000/api/user/verifyotp", { email, otp })
+      .post(`${process.env.baseurl}/api/user/verifyotp`, { email, otp })
       .then((response) => {
         if (response.status === 200) {
           navigate("/changepassword", { state: { email: email } });

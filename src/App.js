@@ -25,7 +25,6 @@ function App() {
             <Route path="/update/:id" element={<UpdateProducts />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/logout" element={<Logout />}></Route>
-            
           </Route>
           {/* 
       Signup route is placed outside the PrivateComponent route, 
@@ -33,9 +32,9 @@ function App() {
     */}
           <Route path="/signup" element={<SignUP />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/emailotp" element={<EmailOtp/>}></Route>
-          <Route path="/getotp" element={<GetOtp/>}></Route>
-          <Route path="/changepassword" element={<ChangePassword/>}></Route>
+          <Route path="/emailotp" element={<EmailOtp />}></Route>
+          <Route path="/getotp" element={<GetOtp />}></Route>
+          <Route path="/changepassword" element={<ChangePassword />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

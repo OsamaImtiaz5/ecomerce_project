@@ -17,7 +17,7 @@ const AddProducts = () => {
     try {
       axios
         .post(
-          "http://localhost:8000/api/product/add-product",
+          `${process.env.baseurl}/api/product/add-product`,
           { name, price, category, brand, userId },
           { headers: { Authorization: `Bearer ${token}` } }
         )

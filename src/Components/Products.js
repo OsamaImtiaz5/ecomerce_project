@@ -14,7 +14,7 @@ const Products = () => {
     try {
       axios
         //.get(`${BaseUrl.baseUrl}/employe/get/${id}`)
-        .get("http://localhost:8000/api/product/get-product",{
+        .get(`${process.env.baseurl}/api/product/get-product`,{
             headers: { Authorization: `Bearer ${token}` }})
         .then((res) => {
           console.log(res);
@@ -34,7 +34,7 @@ const Products = () => {
   const deleteProducts = (_id) => {
     try {
       axios
-        .delete(`http://localhost:8000/api/product/del-product/${_id}`,{
+        .delete(`${process.env.baseurl}/api/product/del-product/${_id}`,{
             headers: { Authorization: `Bearer ${token}` }})
         .then((response) => {
           if (response.data.status === "ok") {
@@ -55,7 +55,7 @@ const Products = () => {
     if (key) {
       try {
         axios
-          .get(`http://localhost:8000/api/product/search/${key}`, {
+          .get(`${process.env.baseurl}/api/product/search/${key}`, {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((response) => {
@@ -118,7 +118,7 @@ const Products = () => {
                   </td>
                 </tr>
               ))}
-            {/* {products?.length === 0 && <p>No Result Found</p>} */}
+            {products?.length === 0 && <p>No Result Found</p>}
           </tbody>
         </table>
       </div>

@@ -13,7 +13,7 @@ const EmailOtp = () => {
   const checkEmail = async () => {
     try {
       axios
-        .post("http://localhost:8000/api/user/reset-mail", { email })
+        .post(`${process.env.baseurl}/api/user/reset-mail`, { email })
         .then((response) => {
           // const result = response.data;
           if (response.status === 200) {

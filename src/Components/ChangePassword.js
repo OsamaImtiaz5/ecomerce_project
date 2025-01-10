@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useLocation,useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const ChangePassword = () => {
     if (password === confirmPassword) {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/user/update_password",
+          `${process.env.baseurl}/api/user/update_password`,
           {
             email,
             password,

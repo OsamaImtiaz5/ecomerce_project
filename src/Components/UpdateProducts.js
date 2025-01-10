@@ -19,7 +19,7 @@ const UpdateProducts = () => {
   const getProductsDetails = () => {
     console.warn(params);
     axios
-      .get(`http://localhost:8000/api/product/getproduct-id/${params.id}`,{
+      .get(`${process.env.baseurl}/api/product/getproduct-id/${params.id}`,{
           headers: { Authorization: `Bearer ${token}` },
         })
       .then((response) => {
@@ -36,7 +36,7 @@ const UpdateProducts = () => {
   const updateProducts = () => {
     axios
       .post(
-        `http://localhost:8000/api/product/edit-product/${params.id}`,
+        `${process.env.baseurl}/api/product/edit-product/${params.id}`,
         { name, price, category, brand },
         {
           headers: { Authorization: `Bearer ${token}` },
